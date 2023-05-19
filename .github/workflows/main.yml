@@ -19,7 +19,7 @@ jobs:
 
       - name: Read Domain from File
         id: read_domain
-        run: echo "::set-output name=domain::$(cat domain.txt)"
+        run: echo "::set-output name=domain::$(www.google.com)"
 
       - name: Ping Domain
         run: ping -c 5 ${{ steps.read_domain.outputs.domain }}
