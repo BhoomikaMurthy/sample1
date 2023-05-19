@@ -1,25 +1,21 @@
-name: Ping Domain Workflow
+name: Ping Domains
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  ping_domain:
-    runs-on: ubuntu-latest
+  ping:
+    runs-on: windows
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Dependencies
+      - name: Ping google
         run: |
-          sudo apt-get update
-          sudo apt-get install -y iputils-ping
-
-      - name: Read Domain from File
-        id: read_domain
-        run: echo "::set-output name=domain::$(www.google.com)"
-
-      - name: Ping Domain
-        run: ping -c 5 ${{ steps.read_domain.outputs.domain }}
+          while read -r google; do
+            ping -c 1 "$google"
+          done < google.txt
