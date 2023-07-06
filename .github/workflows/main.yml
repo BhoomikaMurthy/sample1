@@ -8,14 +8,13 @@ on:
 
 jobs:
   ping:
-    runs-on: windows
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Ping google
-        run: |
+    
           class HelloWorld {
             public static void main(String[] args) {
               System.out.println("Hello, World!"); 
