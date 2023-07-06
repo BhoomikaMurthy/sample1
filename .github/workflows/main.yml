@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+  
 
 jobs:
   ping:
@@ -14,10 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: java pgm
-        run:
-          class HelloWorld {
-            public static void main(String[] args) {
-              System.out.println("Hello, World!"); 
-            }
-              }
+defaults: |
+  import numpy as np
+    print np.arrange(1,5)
