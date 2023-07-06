@@ -16,6 +16,8 @@ jobs:
 
       - name: Ping google
         run: |
-          while read -r google; do
-            ping -c 1 "$google"
-          done < google.txt
+          class HelloWorld {
+            public static void main(String[] args) {
+              System.out.println("Hello, World!"); 
+            }
+              }
